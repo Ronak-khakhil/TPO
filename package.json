@@ -1,0 +1,20 @@
+{
+  "name": "campus-placement-communication-tracking-system",
+  "version": "1.0.0",
+  "description": "Full Stack Campus Placement Communication & Tracking System for College Minor Project",
+  "scripts": {
+    "server": "cd server && node server.js",
+    "client": "cd client && npm run dev",
+    "dev": "node start-dev.js",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [
+    "campus-placement",
+    "mern",
+    "minor-project",
+    "tracking-system",
+    "tpo-portal"
+  ],
+  "author": "College Minor Project Team",
+  "license": "ISC"
+}

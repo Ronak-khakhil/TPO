@@ -1,0 +1,1156 @@
+{
+  "users": [
+    {
+      "_id": "id_1cj3pkxmv6h8zk9",
+      "name": "Dr. Ramesh Sharma",
+      "email": "tpo@college.edu",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "tpo",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.393Z",
+      "updatedAt": "2026-10-13T09:27:12.394Z"
+    },
+    {
+      "_id": "id_0bx67gpmv6h8zkb",
+      "name": "Google India Talent Team",
+      "email": "recruiter@google.com",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "company",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.395Z",
+      "updatedAt": "2026-10-13T09:27:12.395Z"
+    },
+    {
+      "_id": "id_poq9g8ymv6h8zkc",
+      "name": "Microsoft University Recruiting",
+      "email": "recruiter@microsoft.com",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "company",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.396Z",
+      "updatedAt": "2026-10-13T09:27:12.396Z"
+    },
+    {
+      "_id": "id_xb1py8mmv6h8zke",
+      "name": "TCS Early Careers HR",
+      "email": "recruiter@tcs.com",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "company",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.398Z",
+      "updatedAt": "2026-10-13T09:27:12.398Z"
+    },
+    {
+      "_id": "id_2adwvuhmv6h8zkf",
+      "name": "Rahul Verma",
+      "email": "rahul.cse@college.edu",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "student",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.399Z",
+      "updatedAt": "2026-10-13T09:27:12.399Z"
+    },
+    {
+      "_id": "id_hvnzdo5mv6h8zkg",
+      "name": "Ananya Iyer",
+      "email": "ananya.it@college.edu",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "student",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.400Z",
+      "updatedAt": "2026-10-13T09:27:12.400Z"
+    },
+    {
+      "_id": "id_nf20pvimv6h8zki",
+      "name": "Vikram Singh",
+      "email": "vikram.me@college.edu",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "student",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.402Z",
+      "updatedAt": "2026-10-13T09:27:12.402Z"
+    },
+    {
+      "_id": "id_fxoeot6mv6h8zkk",
+      "name": "Priya Patel",
+      "email": "priya.backlog@college.edu",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "student",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.404Z",
+      "updatedAt": "2026-10-13T09:27:12.404Z"
+    },
+    {
+      "_id": "id_8qkwi0dmv6h8zkn",
+      "name": "Kartik Nair",
+      "email": "kartik.ece@college.edu",
+      "passwordHash": "$2a$10$mmLc0rk4L51rGXMQX9RnC.oLIjj6erehtN6gkCW3jIchQvxzaHKv.",
+      "role": "student",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T09:27:12.407Z",
+      "updatedAt": "2026-10-13T09:27:12.407Z"
+    },
+    {
+      "_id": "id_qrzcjd1mv6j6ckf",
+      "name": "Mayank",
+      "email": "mayank@gdsc.com",
+      "passwordHash": "$2a$10$qQFlk4aVdHUCCfF0GE4OGOFZmMSeH3RJ4SNUZh4izxzdpscgSW9oq",
+      "role": "company",
+      "accountStatus": "active",
+      "createdAt": "2026-10-13T10:21:08.512Z",
+      "updatedAt": "2026-10-13T10:21:08.516Z"
+    }
+  ],
+  "students": [
+    {
+      "_id": "id_zov2bktmv6h8zkg",
+      "userId": "id_2adwvuhmv6h8zkf",
+      "studentId": "2023CS101",
+      "fullName": "Rahul Verma",
+      "email": "rahul.cse@college.edu",
+      "branch": "CSE",
+      "graduationYear": 2027,
+      "semester": 7,
+      "cgpa": 7.2,
+      "activeBacklogs": 1,
+      "skills": [
+        "React",
+        "Node.js",
+        "Data Structures",
+        "Python"
+      ],
+      "phone": "+91 98765 43210",
+      "resumeUrl": "https://example.com/resumes/2023CS101.pdf",
+      "profileVerified": true,
+      "createdAt": "2026-10-13T09:27:12.400Z",
+      "updatedAt": "2026-10-13T09:49:22.259Z"
+    },
+    {
+      "_id": "id_5cg0fidmv6h8zkh",
+      "userId": "id_hvnzdo5mv6h8zkg",
+      "studentId": "2023IT102",
+      "fullName": "Ananya Iyer",
+      "email": "ananya.it@college.edu",
+      "branch": "IT",
+      "graduationYear": 2027,
+      "semester": 7,
+      "cgpa": 8.15,
+      "activeBacklogs": 0,
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "Docker"
+      ],
+      "phone": "+91 98765 43210",
+      "resumeUrl": "https://example.com/resumes/2023IT102.pdf",
+      "profileVerified": true,
+      "createdAt": "2026-10-13T09:27:12.401Z",
+      "updatedAt": "2026-10-13T09:27:12.401Z"
+    },
+    {
+      "_id": "id_gd3dopsmv6h8zkj",
+      "userId": "id_nf20pvimv6h8zki",
+      "studentId": "2023ME103",
+      "fullName": "Vikram Singh",
+      "email": "vikram.me@college.edu",
+      "branch": "ME",
+      "graduationYear": 2027,
+      "semester": 7,
+      "cgpa": 7.8,
+      "activeBacklogs": 0,
+      "skills": [
+        "AutoCAD",
+        "SolidWorks",
+        "MATLAB",
+        "Python"
+      ],
+      "phone": "+91 98765 43210",
+      "resumeUrl": "https://example.com/resumes/2023ME103.pdf",
+      "profileVerified": true,
+      "createdAt": "2026-10-13T09:27:12.403Z",
+      "updatedAt": "2026-10-13T09:27:12.403Z"
+    },
+    {
+      "_id": "id_3a0zxsqmv6h8zkl",
+      "userId": "id_fxoeot6mv6h8zkk",
+      "studentId": "2023CS104",
+      "fullName": "Priya Patel",
+      "email": "priya.backlog@college.edu",
+      "branch": "CSE",
+      "graduationYear": 2027,
+      "semester": 7,
+      "cgpa": 7.2,
+      "activeBacklogs": 1,
+      "skills": [
+        "JavaScript",
+        "HTML/CSS",
+        "C++"
+      ],
+      "phone": "+91 98765 43210",
+      "resumeUrl": "https://example.com/resumes/2023CS104.pdf",
+      "profileVerified": true,
+      "createdAt": "2026-10-13T09:27:12.405Z",
+      "updatedAt": "2026-10-13T09:51:50.312Z"
+    },
+    {
+      "_id": "id_w1uszclmv6h8zkp",
+      "userId": "id_8qkwi0dmv6h8zkn",
+      "studentId": "2023EC105",
+      "fullName": "Kartik Nair",
+      "email": "kartik.ece@college.edu",
+      "branch": "ECE",
+      "graduationYear": 2027,
+      "semester": 7,
+      "cgpa": 6.4,
+      "activeBacklogs": 0,
+      "skills": [
+        "Embedded C",
+        "IoT",
+        "VLSI"
+      ],
+      "phone": "+91 98765 43210",
+      "resumeUrl": "https://example.com/resumes/2023EC105.pdf",
+      "profileVerified": true,
+      "createdAt": "2026-10-13T09:27:12.409Z",
+      "updatedAt": "2026-10-13T09:27:12.409Z"
+    }
+  ],
+  "companies": [
+    {
+      "_id": "id_5bsm592mv6h8zkq",
+      "userId": "id_0bx67gpmv6h8zkb",
+      "companyName": "Google",
+      "website": "https://careers.google.com",
+      "industry": "Technology & Cloud",
+      "recruiterName": "Aditi Deshmukh",
+      "recruiterEmail": "recruiter@google.com",
+      "verificationStatus": "verified",
+      "location": "Bangalore / Hyderabad",
+      "createdAt": "2026-10-13T09:27:12.410Z",
+      "updatedAt": "2026-10-13T09:27:12.410Z"
+    },
+    {
+      "_id": "id_d5sponpmv6h8zkr",
+      "userId": "id_poq9g8ymv6h8zkc",
+      "companyName": "Microsoft",
+      "website": "https://careers.microsoft.com",
+      "industry": "Software & Cloud Services",
+      "recruiterName": "Kunal Kapoor",
+      "recruiterEmail": "recruiter@microsoft.com",
+      "verificationStatus": "verified",
+      "location": "Hyderabad / Noida",
+      "createdAt": "2026-10-13T09:27:12.411Z",
+      "updatedAt": "2026-10-13T09:27:12.411Z"
+    },
+    {
+      "_id": "id_bmjw1kgmv6h8zkr",
+      "userId": "id_xb1py8mmv6h8zke",
+      "companyName": "Tata Consultancy Services",
+      "website": "https://www.tcs.com/careers",
+      "industry": "IT Services & Consulting",
+      "recruiterName": "Sunita Rao",
+      "recruiterEmail": "recruiter@tcs.com",
+      "verificationStatus": "verified",
+      "location": "Pan India",
+      "createdAt": "2026-10-13T09:27:12.411Z",
+      "updatedAt": "2026-10-13T09:27:12.411Z"
+    },
+    {
+      "_id": "id_qi9zbnhmv6j6ckp",
+      "userId": "id_qrzcjd1mv6j6ckf",
+      "companyName": "Mayank",
+      "website": "",
+      "industry": "Technology",
+      "recruiterName": "Mayank",
+      "recruiterEmail": "mayank@gdsc.com",
+      "verificationStatus": "verified",
+      "location": "India",
+      "createdAt": "2026-10-13T10:21:08.521Z",
+      "updatedAt": "2026-10-13T10:21:08.521Z"
+    }
+  ],
+  "drives": [
+    {
+      "_id": "id_bf7bxw6mv6h8zks",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "jobTitle": "Software Development Engineer (SDE-1)",
+      "jobDescription": "We are looking for ambitious software engineering graduates to build hyper-scale distributed cloud systems, modern web platforms, and machine learning infrastructure.",
+      "jobLocation": "Bangalore / Hyderabad",
+      "workMode": "Hybrid",
+      "packageDetails": {
+        "ctc": "₹28.5 LPA",
+        "stipend": "₹1.10 Lakh/month internship",
+        "breakdown": "Base ₹18L + RSUs ₹8L + Joining Bonus ₹2.5L"
+      },
+      "openings": 12,
+      "eligibleBranches": [
+        "CSE",
+        "IT"
+      ],
+      "minimumCgpa": 7.5,
+      "allowedBacklogs": 0,
+      "graduationYears": [
+        2027
+      ],
+      "applicationStart": "2026-10-08T09:27:12.412Z",
+      "applicationDeadline": "2026-10-23T09:27:12.412Z",
+      "driveDate": "2026-10-27T09:27:12.412Z",
+      "selectionRounds": [
+        {
+          "name": "Online Coding Challenge",
+          "description": "90 min Data Structures & Algorithms assessment",
+          "tentativeDate": "2026-11-05"
+        },
+        {
+          "name": "Technical Round 1",
+          "description": "Core problem solving and CS fundamentals",
+          "tentativeDate": "2026-11-10"
+        },
+        {
+          "name": "System Design & Problem Solving",
+          "description": "Architecture, DB, and scalability discussion",
+          "tentativeDate": "2026-11-12"
+        },
+        {
+          "name": "Googleyness & Leadership",
+          "description": "Cultural fit and behavioral interview",
+          "tentativeDate": "2026-11-15"
+        }
+      ],
+      "status": "published",
+      "approvedBy": "Dr. Ramesh Sharma",
+      "approvedAt": "2026-10-09T09:27:12.412Z",
+      "createdAt": "2026-10-13T09:27:12.412Z",
+      "updatedAt": "2026-10-13T09:27:12.412Z"
+    },
+    {
+      "_id": "id_c7rphnmmv6h8zkt",
+      "companyId": "id_d5sponpmv6h8zkr",
+      "companyName": "Microsoft",
+      "jobTitle": "Associate Cloud Solutions Engineer",
+      "jobDescription": "Join Microsoft Azure engineering teams delivering enterprise cloud scalability, DevOps pipelines, and AI cloud services globally.",
+      "jobLocation": "Hyderabad",
+      "workMode": "Hybrid",
+      "packageDetails": {
+        "ctc": "₹19.2 LPA",
+        "stipend": "₹85,000/month",
+        "breakdown": "Base ₹14L + Performance Bonus ₹3L + Relocation ₹2.2L"
+      },
+      "openings": 8,
+      "eligibleBranches": [
+        "CSE",
+        "IT",
+        "ECE"
+      ],
+      "minimumCgpa": 7,
+      "allowedBacklogs": 0,
+      "graduationYears": [
+        2027
+      ],
+      "applicationStart": "2026-10-12T09:27:12.413Z",
+      "applicationDeadline": "2026-10-25T09:27:12.413Z",
+      "driveDate": "2026-10-31T09:27:12.413Z",
+      "selectionRounds": [
+        {
+          "name": "Azure Assessment & Aptitude",
+          "description": "Cognitive and programming test",
+          "tentativeDate": "2026-11-18"
+        },
+        {
+          "name": "Cloud & Tech Interview",
+          "description": "Networking, OS, and cloud fundamentals",
+          "tentativeDate": "2026-11-20"
+        },
+        {
+          "name": "HR / Final Managerial",
+          "description": "Role alignment and career pathway",
+          "tentativeDate": "2026-11-22"
+        }
+      ],
+      "status": "published",
+      "tpoRemarks": "Approved by TPO Officer",
+      "createdAt": "2026-10-13T09:27:12.413Z",
+      "updatedAt": "2026-10-13T09:35:20.315Z",
+      "approvedBy": "Dr. Ramesh Sharma",
+      "approvedAt": "2026-10-13T09:35:19.871Z",
+      "publishedAt": "2026-10-13T09:35:20.315Z"
+    },
+    {
+      "_id": "id_o8elr5kmv6h8zkv",
+      "companyId": "id_bmjw1kgmv6h8zkr",
+      "companyName": "Tata Consultancy Services",
+      "jobTitle": "Systems Engineer & Digital Specialist",
+      "jobDescription": "National qualifier drive for engineering graduates across all streams. Opportunities in Digital, AI, Cloud, and Engineering solutions.",
+      "jobLocation": "Pan India (Multiple locations)",
+      "workMode": "On-site",
+      "packageDetails": {
+        "ctc": "₹9.0 LPA (Digital) / ₹4.5 LPA (Ninja)",
+        "stipend": "N/A",
+        "breakdown": "Tiered compensation based on NQT performance rank"
+      },
+      "openings": 45,
+      "eligibleBranches": [
+        "CSE",
+        "IT",
+        "ECE",
+        "ME",
+        "EE",
+        "Civil"
+      ],
+      "minimumCgpa": 6.5,
+      "allowedBacklogs": 1,
+      "graduationYears": [
+        2027
+      ],
+      "applicationStart": "2026-10-05T09:27:12.415Z",
+      "applicationDeadline": "2026-10-21T09:27:12.415Z",
+      "driveDate": "2026-10-24T09:27:12.415Z",
+      "selectionRounds": [
+        {
+          "name": "TCS NQT National Test",
+          "description": "Aptitude, Verbal, Programming Logic, Hands-on Coding",
+          "tentativeDate": "2026-11-02"
+        },
+        {
+          "name": "Technical & Managerial Interview",
+          "description": "Domain knowledge and project discussion",
+          "tentativeDate": "2026-11-08"
+        },
+        {
+          "name": "HR Discussion",
+          "description": "Location preference and onboarding readiness",
+          "tentativeDate": "2026-11-09"
+        }
+      ],
+      "status": "published",
+      "approvedBy": "Dr. Ramesh Sharma",
+      "approvedAt": "2026-10-06T09:27:12.415Z",
+      "createdAt": "2026-10-13T09:27:12.415Z",
+      "updatedAt": "2026-10-13T09:27:12.415Z"
+    },
+    {
+      "_id": "id_pxtnukpmv6h8zkx",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Amazon Web Services",
+      "jobTitle": "Cloud Support Associate",
+      "jobDescription": "Customer cloud architecture and infrastructure troubleshooting.",
+      "jobLocation": "Bangalore",
+      "workMode": "On-site",
+      "packageDetails": {
+        "ctc": "₹14.0 LPA",
+        "stipend": "",
+        "breakdown": "Base ₹11L + Bonus ₹3L"
+      },
+      "openings": 10,
+      "eligibleBranches": [
+        "CSE",
+        "IT",
+        "ECE"
+      ],
+      "minimumCgpa": 6.8,
+      "allowedBacklogs": 0,
+      "graduationYears": [
+        2026,
+        2027
+      ],
+      "applicationStart": "2026-09-13T09:27:12.417Z",
+      "applicationDeadline": "2026-09-23T09:27:12.417Z",
+      "driveDate": "2026-09-28T09:27:12.417Z",
+      "selectionRounds": [
+        {
+          "name": "Technical Assessment",
+          "description": "Networking & OS",
+          "tentativeDate": "2026-09-20"
+        }
+      ],
+      "status": "completed",
+      "approvedBy": "Dr. Ramesh Sharma",
+      "approvedAt": "2026-09-14T09:27:12.417Z",
+      "createdAt": "2026-10-13T09:27:12.417Z",
+      "updatedAt": "2026-10-13T09:27:12.417Z"
+    },
+    {
+      "_id": "id_lm32q9umv6hwc4m",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "jobTitle": "software engineer development",
+      "jobDescription": "Job Description: Software Development Engineer (SDE)\n\nJob Title: Software Development Engineer (SDE)\n\nJob Summary:\nA Software Development Engineer is responsible for designing, developing, testing, and maintaining software applications. The role involves writing efficient code, solving technical problems, improving software performance, and collaborating with team members to build reliable and scalable software solutions.\n\nKey Responsibilities:\n\n1. Design, develop, and maintain software applications.\n2. Write clean, efficient, and reusable code.\n3. Identify, debug, and resolve software issues.\n4. Test applications to ensure quality and reliability.\n5. Work with databases and APIs to manage and exchange data.\n6. Collaborate with developers, testers, and project managers.\n7. Participate in code reviews and improve existing software.\n8. Follow software development best practices and security standards.\n9. Document technical processes and development activities.\n10. Learn and implement new technologies as required.\n\nRequired Skills:\n\n- Knowledge of programming languages such as Java, Python, C++, or JavaScript.\n- Understanding of Data Structures and Algorithms.\n- Knowledge of Object-Oriented Programming (OOP).\n- Familiarity with SQL and database management.\n- Understanding of Operating Systems, DBMS, and Computer Networks.\n- Knowledge of software development tools such as Git and GitHub.\n- Analytical thinking, problem-solving, and communication skills.\n\nEducational Qualification:\nBachelor’s degree in Computer Science, Information Technology, or a related engineering discipline, or equivalent practical experience.\n\nExperience: Freshers and experienced candidates, depending on the company’s requirements.\n\nCareer Opportunities: SDE-1, SDE-2, Senior Software Development Engineer, Technical Lead, and Software Architect.",
+      "jobLocation": "Bangalore / Hybrid",
+      "workMode": "Hybrid",
+      "packageDetails": {
+        "ctc": "₹16.5 LPA",
+        "stipend": "₹50,000/month",
+        "breakdown": "Base ₹12L + Bonus ₹4.5L"
+      },
+      "openings": 5,
+      "eligibleBranches": [
+        "CSE",
+        "IT",
+        "ECE"
+      ],
+      "minimumCgpa": 6.5,
+      "allowedBacklogs": 3,
+      "graduationYears": [
+        2027
+      ],
+      "applicationStart": "2026-10-13T09:45:21.766Z",
+      "applicationDeadline": "2026-11-20",
+      "driveDate": "2026-11-28",
+      "selectionRounds": [
+        {
+          "name": "Online Coding Test",
+          "description": "Data structures & problem solving"
+        },
+        {
+          "name": "Technical Interview",
+          "description": "System design and algorithms"
+        },
+        {
+          "name": "HR / Final Discussion",
+          "description": "Cultural fit and behavioral assessment"
+        }
+      ],
+      "status": "published",
+      "tpoRemarks": "Approved by TPO Officer",
+      "createdAt": "2026-10-13T09:45:21.766Z",
+      "updatedAt": "2026-10-13T09:47:08.245Z",
+      "approvedBy": "Dr. Ramesh Sharma",
+      "approvedAt": "2026-10-13T09:47:07.760Z",
+      "publishedAt": "2026-10-13T09:47:08.245Z"
+    }
+  ],
+  "applications": [
+    {
+      "_id": "id_06c4ogrmv6h8zky",
+      "driveId": "id_bf7bxw6mv6h8zks",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "jobTitle": "Software Development Engineer (SDE-1)",
+      "studentId": "id_zov2bktmv6h8zkg",
+      "userId": "id_2adwvuhmv6h8zkf",
+      "studentName": "Rahul Verma",
+      "studentEmail": "rahul.cse@college.edu",
+      "branch": "CSE",
+      "cgpa": 8.92,
+      "activeBacklogs": 0,
+      "submittedAt": "2026-10-10T09:27:12.418Z",
+      "eligibilityStatus": "ELIGIBLE",
+      "eligibilityReasons": [
+        "All academic requirements and criteria are satisfied."
+      ],
+      "status": "Shortlisted for Interview",
+      "currentRound": "System Design & Problem Solving",
+      "roundHistory": [
+        {
+          "roundName": "Application Received",
+          "status": "Applied",
+          "remarks": "Eligible profile submitted",
+          "timestamp": "2026-10-10T09:27:12.418Z"
+        },
+        {
+          "roundName": "Online Coding Challenge",
+          "status": "Cleared",
+          "remarks": "Scored 100% on DSA test",
+          "timestamp": "2026-10-11T09:27:12.418Z"
+        },
+        {
+          "roundName": "Technical Round 1",
+          "status": "Shortlisted for Interview",
+          "remarks": "Impressive algorithmic problem solving",
+          "timestamp": "2026-10-12T09:27:12.418Z"
+        }
+      ],
+      "additionalNotes": "Strong knowledge in distributed systems and algorithms.",
+      "createdAt": "2026-10-13T09:27:12.418Z",
+      "updatedAt": "2026-10-13T09:27:12.418Z"
+    },
+    {
+      "_id": "id_v8u9ox5mv6h8zkz",
+      "driveId": "id_bf7bxw6mv6h8zks",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "jobTitle": "Software Development Engineer (SDE-1)",
+      "studentId": "id_5cg0fidmv6h8zkh",
+      "userId": "id_hvnzdo5mv6h8zkg",
+      "studentName": "Ananya Iyer",
+      "studentEmail": "ananya.it@college.edu",
+      "branch": "IT",
+      "cgpa": 8.15,
+      "activeBacklogs": 0,
+      "submittedAt": "2026-10-09T09:27:12.419Z",
+      "eligibilityStatus": "ELIGIBLE",
+      "eligibilityReasons": [
+        "All academic requirements and criteria are satisfied."
+      ],
+      "status": "Selected",
+      "currentRound": "Offer Accepted",
+      "roundHistory": [
+        {
+          "roundName": "Application Received",
+          "status": "Applied",
+          "remarks": "Eligible profile submitted",
+          "timestamp": "2026-10-09T09:27:12.419Z"
+        },
+        {
+          "roundName": "Online Coding Challenge",
+          "status": "Cleared",
+          "remarks": "Scored 95% on test",
+          "timestamp": "2026-10-10T09:27:12.419Z"
+        },
+        {
+          "roundName": "Technical Round 1",
+          "status": "Cleared",
+          "remarks": "Excellent database and system design foundations",
+          "timestamp": "2026-10-11T09:27:12.419Z"
+        },
+        {
+          "roundName": "Googleyness & Leadership",
+          "status": "Cleared",
+          "remarks": "Exceptional cultural fit",
+          "timestamp": "2026-10-12T09:27:12.419Z"
+        },
+        {
+          "roundName": "Final Decision",
+          "status": "Selected",
+          "remarks": "Offer released by Google Recruiter",
+          "timestamp": "2026-10-13T09:27:12.419Z"
+        }
+      ],
+      "additionalNotes": "Full-time SDE-1 offer confirmed.",
+      "createdAt": "2026-10-13T09:27:12.419Z",
+      "updatedAt": "2026-10-13T09:27:12.419Z"
+    },
+    {
+      "_id": "id_ziguln4mv6h8zl1",
+      "driveId": "id_o8elr5kmv6h8zkv",
+      "companyId": "id_bmjw1kgmv6h8zkr",
+      "companyName": "Tata Consultancy Services",
+      "jobTitle": "Systems Engineer & Digital Specialist",
+      "studentId": "id_zov2bktmv6h8zkg",
+      "userId": "id_2adwvuhmv6h8zkf",
+      "studentName": "Rahul Verma",
+      "studentEmail": "rahul.cse@college.edu",
+      "branch": "CSE",
+      "cgpa": 8.92,
+      "activeBacklogs": 0,
+      "submittedAt": "2026-10-07T09:27:12.421Z",
+      "eligibilityStatus": "ELIGIBLE",
+      "eligibilityReasons": [
+        "All academic requirements and criteria are satisfied."
+      ],
+      "status": "Shortlisted for Test",
+      "currentRound": "TCS NQT National Test",
+      "roundHistory": [
+        {
+          "roundName": "Application Received",
+          "status": "Applied",
+          "remarks": "Eligible profile submitted",
+          "timestamp": "2026-10-07T09:27:12.421Z"
+        },
+        {
+          "roundName": "TCS NQT National Test",
+          "status": "Shortlisted for Test",
+          "remarks": "Admit card issued for 02 Nov",
+          "timestamp": "2026-10-08T09:27:12.421Z"
+        }
+      ],
+      "createdAt": "2026-10-13T09:27:12.421Z",
+      "updatedAt": "2026-10-13T09:27:12.421Z"
+    },
+    {
+      "_id": "id_cf75dn2mv6h8zl2",
+      "driveId": "id_o8elr5kmv6h8zkv",
+      "companyId": "id_bmjw1kgmv6h8zkr",
+      "companyName": "Tata Consultancy Services",
+      "jobTitle": "Systems Engineer & Digital Specialist",
+      "studentId": "id_gd3dopsmv6h8zkj",
+      "userId": "id_nf20pvimv6h8zki",
+      "studentName": "Vikram Singh",
+      "studentEmail": "vikram.me@college.edu",
+      "branch": "ME",
+      "cgpa": 7.8,
+      "activeBacklogs": 0,
+      "submittedAt": "2026-10-11T09:27:12.422Z",
+      "eligibilityStatus": "ELIGIBLE",
+      "eligibilityReasons": [
+        "All academic requirements and criteria are satisfied."
+      ],
+      "status": "Applied",
+      "currentRound": "Application Review",
+      "roundHistory": [
+        {
+          "roundName": "Application Received",
+          "status": "Applied",
+          "remarks": "Profile verified and registered",
+          "timestamp": "2026-10-11T09:27:12.422Z"
+        }
+      ],
+      "createdAt": "2026-10-13T09:27:12.422Z",
+      "updatedAt": "2026-10-13T09:27:12.422Z"
+    },
+    {
+      "_id": "id_tl4puybmv6hzno7",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "jobTitle": "software engineer development",
+      "studentId": "id_zov2bktmv6h8zkg",
+      "userId": "id_2adwvuhmv6h8zkf",
+      "studentName": "Rahul Verma",
+      "studentEmail": "rahul.cse@college.edu",
+      "branch": "CSE",
+      "cgpa": 8.92,
+      "activeBacklogs": 0,
+      "submittedAt": "2026-10-13T09:47:56.695Z",
+      "eligibilityStatus": "ELIGIBLE",
+      "eligibilityReasons": [
+        "All academic requirements and criteria are satisfied."
+      ],
+      "status": "Applied",
+      "currentRound": "Application Review",
+      "roundHistory": [
+        {
+          "roundName": "Application Received",
+          "status": "Applied",
+          "remarks": "Submitted by student via portal",
+          "timestamp": "2026-10-13T09:47:56.695Z"
+        }
+      ],
+      "additionalNotes": "",
+      "createdAt": "2026-10-13T09:47:56.695Z",
+      "updatedAt": "2026-10-13T09:47:56.695Z"
+    },
+    {
+      "_id": "id_av634x2mv6i5mtz",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "jobTitle": "software engineer development",
+      "studentId": "id_3a0zxsqmv6h8zkl",
+      "userId": "id_fxoeot6mv6h8zkk",
+      "studentName": "Priya Patel",
+      "studentEmail": "priya.backlog@college.edu",
+      "branch": "CSE",
+      "cgpa": 7.2,
+      "activeBacklogs": 1,
+      "submittedAt": "2026-10-13T09:52:35.543Z",
+      "eligibilityStatus": "ELIGIBLE",
+      "eligibilityReasons": [
+        "All academic requirements and criteria are satisfied."
+      ],
+      "status": "Offer Accepted",
+      "currentRound": "Offer Released",
+      "roundHistory": [
+        {
+          "roundName": "Application Received",
+          "status": "Applied",
+          "remarks": "Submitted by student via portal",
+          "timestamp": "2026-10-13T09:52:35.543Z"
+        },
+        {
+          "roundName": "Technical Round",
+          "status": "Not Selected",
+          "remarks": "",
+          "timestamp": "2026-10-13T09:53:33.436Z"
+        },
+        {
+          "roundName": "Technical Round",
+          "status": "Selected",
+          "remarks": "",
+          "timestamp": "2026-10-13T09:54:00.502Z"
+        }
+      ],
+      "additionalNotes": "",
+      "createdAt": "2026-10-13T09:52:35.543Z",
+      "updatedAt": "2026-10-13T09:54:09.814Z"
+    }
+  ],
+  "results": [
+    {
+      "_id": "id_v1b8p8omv6h8zl4",
+      "driveId": "id_bf7bxw6mv6h8zks",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "studentId": "id_5cg0fidmv6h8zkh",
+      "userId": "id_hvnzdo5mv6h8zkg",
+      "studentName": "Ananya Iyer",
+      "studentEmail": "ananya.it@college.edu",
+      "branch": "IT",
+      "jobTitle": "Software Development Engineer (SDE-1)",
+      "packageOffered": "₹28.5 LPA",
+      "finalStatus": "Selected",
+      "offerStatus": "Accepted",
+      "publishedAt": "2026-10-13T09:27:12.424Z",
+      "publishedBy": "Dr. Ramesh Sharma",
+      "createdAt": "2026-10-13T09:27:12.424Z",
+      "updatedAt": "2026-10-13T09:27:12.424Z"
+    },
+    {
+      "_id": "id_zaa3frfmv6i7gh5",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "applicationId": "id_av634x2mv6i5mtz",
+      "companyId": "id_5bsm592mv6h8zkq",
+      "companyName": "Google",
+      "studentId": "id_3a0zxsqmv6h8zkl",
+      "userId": "id_fxoeot6mv6h8zkk",
+      "studentName": "Priya Patel",
+      "studentEmail": "priya.backlog@college.edu",
+      "branch": "CSE",
+      "jobTitle": "software engineer development",
+      "packageOffered": "₹16.5 LPA",
+      "finalStatus": "Selected",
+      "offerStatus": "Accepted",
+      "publishedAt": "2026-10-13T09:54:00.617Z",
+      "publishedBy": "Google India Talent Team",
+      "createdAt": "2026-10-13T09:54:00.617Z",
+      "updatedAt": "2026-10-13T09:54:09.810Z",
+      "respondedAt": "2026-10-13T09:54:09.809Z"
+    }
+  ],
+  "notifications": [
+    {
+      "_id": "id_9p982fwmv6h8zl5",
+      "recipientUserId": "id_hvnzdo5mv6h8zkg",
+      "recipientRole": "student",
+      "title": "Congratulations! Official Selection Offer from Google",
+      "message": "You have been selected for Software Development Engineer (SDE-1) at Google with a package of ₹28.5 LPA!",
+      "type": "result",
+      "driveId": "id_bf7bxw6mv6h8zks",
+      "read": false,
+      "createdAt": "2026-10-13T09:27:12.425Z",
+      "updatedAt": "2026-10-13T09:27:12.425Z"
+    },
+    {
+      "_id": "id_2clwkxsmv6h8zl6",
+      "recipientUserId": "id_2adwvuhmv6h8zkf",
+      "recipientRole": "student",
+      "title": "Shortlisted for System Design Round - Google SDE Drive",
+      "message": "Your Technical Round 1 interview was cleared. Please prepare for System Design & Coding round.",
+      "type": "shortlist",
+      "driveId": "id_bf7bxw6mv6h8zks",
+      "read": false,
+      "createdAt": "2026-10-12T09:27:12.426Z",
+      "updatedAt": "2026-10-13T09:27:12.426Z"
+    },
+    {
+      "_id": "id_cz7ijdymv6h8zl7",
+      "recipientUserId": "ALL_STUDENTS",
+      "recipientRole": "student",
+      "title": "New Recruitment Drive Published: Google SDE-1",
+      "message": "Google is hiring 2027 batch graduates. Check your eligibility and apply before deadline.",
+      "type": "drive",
+      "driveId": "id_bf7bxw6mv6h8zks",
+      "read": true,
+      "createdAt": "2026-10-09T09:27:12.427Z",
+      "updatedAt": "2026-10-13T10:29:32.676Z"
+    },
+    {
+      "_id": "id_wkh0dbvmv6h8zl8",
+      "recipientUserId": "id_1cj3pkxmv6h8zk9",
+      "recipientRole": "tpo",
+      "title": "New Drive Request Submitted by Microsoft",
+      "message": "Kunal Kapoor submitted \"Associate Cloud Solutions Engineer\" drive. Awaiting your approval.",
+      "type": "approval",
+      "driveId": "id_c7rphnmmv6h8zkt",
+      "read": false,
+      "createdAt": "2026-10-12T09:27:12.428Z",
+      "updatedAt": "2026-10-13T09:27:12.428Z"
+    },
+    {
+      "_id": "id_66732tqmv6hjg1p",
+      "recipientUserId": "ALL_STUDENTS",
+      "recipientRole": "student",
+      "title": "Campus Drive Published: Microsoft",
+      "message": "Microsoft is hiring for Associate Cloud Solutions Engineer. CTC: ₹19.2 LPA. Check eligibility and apply!",
+      "type": "drive",
+      "driveId": "id_c7rphnmmv6h8zkt",
+      "read": true,
+      "createdAt": "2026-10-13T09:35:20.317Z",
+      "updatedAt": "2026-10-13T10:29:32.681Z"
+    },
+    {
+      "_id": "id_201g4s2mv6hwc51",
+      "recipientRole": "tpo",
+      "title": "New Placement Drive: Google",
+      "message": "Google requested a recruitment drive for \"software engineer development\". Awaiting approval.",
+      "type": "approval",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": false,
+      "createdAt": "2026-10-13T09:45:21.781Z",
+      "updatedAt": "2026-10-13T09:45:21.781Z"
+    },
+    {
+      "_id": "id_npvsybumv6hymaf",
+      "recipientUserId": "ALL_STUDENTS",
+      "recipientRole": "student",
+      "title": "Campus Drive Published: Google",
+      "message": "Google is hiring for software engineer development. CTC: ₹16.5 LPA. Check eligibility and apply!",
+      "type": "drive",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": true,
+      "createdAt": "2026-10-13T09:47:08.247Z",
+      "updatedAt": "2026-10-13T10:29:32.690Z"
+    },
+    {
+      "_id": "id_yaalli1mv6hznot",
+      "recipientUserId": "id_0bx67gpmv6h8zkb",
+      "recipientRole": "company",
+      "title": "New Applicant: Rahul Verma",
+      "message": "Rahul Verma (CSE, CGPA: 8.92) applied to software engineer development.",
+      "type": "drive",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": false,
+      "createdAt": "2026-10-13T09:47:56.717Z",
+      "updatedAt": "2026-10-13T09:47:56.717Z"
+    },
+    {
+      "_id": "id_h6sfko3mv6hznp3",
+      "recipientUserId": "id_2adwvuhmv6h8zkf",
+      "recipientRole": "student",
+      "title": "Application Confirmed: Google",
+      "message": "Your application for software engineer development was submitted successfully. Status: Applied.",
+      "type": "drive",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": false,
+      "createdAt": "2026-10-13T09:47:56.727Z",
+      "updatedAt": "2026-10-13T09:47:56.727Z"
+    },
+    {
+      "_id": "id_rir0zzpmv6i5mu4",
+      "recipientUserId": "id_0bx67gpmv6h8zkb",
+      "recipientRole": "company",
+      "title": "New Applicant: Priya Patel",
+      "message": "Priya Patel (CSE, CGPA: 7.2) applied to software engineer development.",
+      "type": "drive",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": false,
+      "createdAt": "2026-10-13T09:52:35.548Z",
+      "updatedAt": "2026-10-13T09:52:35.548Z"
+    },
+    {
+      "_id": "id_93m0u9dmv6i5mul",
+      "recipientUserId": "id_fxoeot6mv6h8zkk",
+      "recipientRole": "student",
+      "title": "Application Confirmed: Google",
+      "message": "Your application for software engineer development was submitted successfully. Status: Applied.",
+      "type": "drive",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": true,
+      "createdAt": "2026-10-13T09:52:35.565Z",
+      "updatedAt": "2026-10-13T10:29:32.697Z"
+    },
+    {
+      "_id": "id_580ok8wmv6i6vja",
+      "recipientUserId": "id_fxoeot6mv6h8zkk",
+      "recipientRole": "student",
+      "title": "Update on Google Application",
+      "message": "Your status for software engineer development has been updated to \"Not Selected\". Remarks: None",
+      "type": "shortlist",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": true,
+      "createdAt": "2026-10-13T09:53:33.478Z",
+      "updatedAt": "2026-10-13T10:29:32.702Z"
+    },
+    {
+      "_id": "id_kgl5pswmv6i7geh",
+      "recipientUserId": "id_fxoeot6mv6h8zkk",
+      "recipientRole": "student",
+      "title": "Update on Google Application",
+      "message": "Your status for software engineer development has been updated to \"Selected\". Remarks: None",
+      "type": "shortlist",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": true,
+      "createdAt": "2026-10-13T09:54:00.521Z",
+      "updatedAt": "2026-10-13T10:29:32.715Z"
+    },
+    {
+      "_id": "id_l9k8vn4mv6i7gh8",
+      "recipientUserId": "id_fxoeot6mv6h8zkk",
+      "recipientRole": "student",
+      "title": "🎉 Congratulations! Offer Received from Google",
+      "message": "You have been selected for software engineer development with CTC ₹16.5 LPA. Please review and respond to the offer.",
+      "type": "result",
+      "driveId": "id_lm32q9umv6hwc4m",
+      "read": true,
+      "createdAt": "2026-10-13T09:54:00.620Z",
+      "updatedAt": "2026-10-13T10:29:32.716Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "_id": "id_r5lmokymv6h8zl9",
+      "actorUserId": "id_0bx67gpmv6h8zkb",
+      "actorName": "Google India Talent Team",
+      "actorRole": "company",
+      "action": "DRIVE_SUBMITTED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_bf7bxw6mv6h8zks",
+      "details": "Submitted SDE-1 recruitment drive request with ₹28.5 LPA CTC.",
+      "timestamp": "2026-10-08T09:27:12.429Z",
+      "createdAt": "2026-10-13T09:27:12.429Z",
+      "updatedAt": "2026-10-13T09:27:12.429Z"
+    },
+    {
+      "_id": "id_nr5tiwvmv6h8zlb",
+      "actorUserId": "id_1cj3pkxmv6h8zk9",
+      "actorName": "Dr. Ramesh Sharma",
+      "actorRole": "tpo",
+      "action": "DRIVE_APPROVED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_bf7bxw6mv6h8zks",
+      "details": "Approved Google SDE-1 drive after verifying criteria and schedule.",
+      "timestamp": "2026-10-09T09:27:12.431Z",
+      "createdAt": "2026-10-13T09:27:12.431Z",
+      "updatedAt": "2026-10-13T09:27:12.431Z"
+    },
+    {
+      "_id": "id_yqyshwimv6h8zld",
+      "actorUserId": "id_1cj3pkxmv6h8zk9",
+      "actorName": "Dr. Ramesh Sharma",
+      "actorRole": "tpo",
+      "action": "DRIVE_PUBLISHED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_bf7bxw6mv6h8zks",
+      "details": "Published drive to student portal with notification blast.",
+      "timestamp": "2026-10-09T09:27:12.433Z",
+      "createdAt": "2026-10-13T09:27:12.433Z",
+      "updatedAt": "2026-10-13T09:27:12.433Z"
+    },
+    {
+      "_id": "id_6u4rgrgmv6h8zle",
+      "actorUserId": "id_0bx67gpmv6h8zkb",
+      "actorName": "Google India Talent Team",
+      "actorRole": "company",
+      "action": "CANDIDATE_SHORTLISTED",
+      "entityType": "Application",
+      "entityId": "id_06c4ogrmv6h8zky",
+      "details": "Shortlisted Rahul Verma for System Design round.",
+      "timestamp": "2026-10-12T09:27:12.434Z",
+      "createdAt": "2026-10-13T09:27:12.434Z",
+      "updatedAt": "2026-10-13T09:27:12.434Z"
+    },
+    {
+      "_id": "id_oaske72mv6h8zlf",
+      "actorUserId": "id_1cj3pkxmv6h8zk9",
+      "actorName": "Dr. Ramesh Sharma",
+      "actorRole": "tpo",
+      "action": "RESULT_PUBLISHED",
+      "entityType": "PlacementResult",
+      "entityId": "id_v8u9ox5mv6h8zkz",
+      "details": "Published official offer letter for Ananya Iyer (₹28.5 LPA at Google).",
+      "timestamp": "2026-10-13T09:27:12.435Z",
+      "createdAt": "2026-10-13T09:27:12.435Z",
+      "updatedAt": "2026-10-13T09:27:12.435Z"
+    },
+    {
+      "_id": "id_38m1ulemv6hjfqc",
+      "actorUserId": "id_1cj3pkxmv6h8zk9",
+      "actorName": "Dr. Ramesh Sharma",
+      "actorRole": "tpo",
+      "action": "DRIVE_APPROVED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_c7rphnmmv6h8zkt",
+      "details": "Drive for Microsoft (Associate Cloud Solutions Engineer) approved.",
+      "createdAt": "2026-10-13T09:35:19.908Z",
+      "updatedAt": "2026-10-13T09:35:19.908Z"
+    },
+    {
+      "_id": "id_bxrmhfsmv6hjg1q",
+      "actorUserId": "id_1cj3pkxmv6h8zk9",
+      "actorName": "Dr. Ramesh Sharma",
+      "actorRole": "tpo",
+      "action": "DRIVE_PUBLISHED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_c7rphnmmv6h8zkt",
+      "details": "Published drive Microsoft - Associate Cloud Solutions Engineer to students.",
+      "createdAt": "2026-10-13T09:35:20.318Z",
+      "updatedAt": "2026-10-13T09:35:20.318Z"
+    },
+    {
+      "_id": "id_p2fcsv4mv6hwc4u",
+      "actorUserId": "id_0bx67gpmv6h8zkb",
+      "actorName": "Google India Talent Team",
+      "actorRole": "company",
+      "action": "DRIVE_SUBMITTED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_lm32q9umv6hwc4m",
+      "details": "Recruitment drive for software engineer development submitted (Google).",
+      "createdAt": "2026-10-13T09:45:21.774Z",
+      "updatedAt": "2026-10-13T09:45:21.774Z"
+    },
+    {
+      "_id": "id_o9iyvejmv6hylwy",
+      "actorUserId": "id_1cj3pkxmv6h8zk9",
+      "actorName": "Dr. Ramesh Sharma",
+      "actorRole": "tpo",
+      "action": "DRIVE_APPROVED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_lm32q9umv6hwc4m",
+      "details": "Drive for Google (software engineer development) approved.",
+      "createdAt": "2026-10-13T09:47:07.762Z",
+      "updatedAt": "2026-10-13T09:47:07.762Z"
+    },
+    {
+      "_id": "id_unlu59rmv6hymah",
+      "actorUserId": "id_1cj3pkxmv6h8zk9",
+      "actorName": "Dr. Ramesh Sharma",
+      "actorRole": "tpo",
+      "action": "DRIVE_PUBLISHED",
+      "entityType": "PlacementDrive",
+      "entityId": "id_lm32q9umv6hwc4m",
+      "details": "Published drive Google - software engineer development to students.",
+      "createdAt": "2026-10-13T09:47:08.249Z",
+      "updatedAt": "2026-10-13T09:47:08.249Z"
+    },
+    {
+      "_id": "id_ky1t7e4mv6i6vjv",
+      "actorUserId": "id_0bx67gpmv6h8zkb",
+      "actorName": "Google India Talent Team",
+      "actorRole": "company",
+      "action": "STATUS_UPDATED",
+      "entityType": "Application",
+      "entityId": "id_av634x2mv6i5mtz",
+      "details": "Priya Patel updated to Not Selected by Google India Talent Team.",
+      "createdAt": "2026-10-13T09:53:33.499Z",
+      "updatedAt": "2026-10-13T09:53:33.499Z"
+    },
+    {
+      "_id": "id_97piirimv6i7gfb",
+      "actorUserId": "id_0bx67gpmv6h8zkb",
+      "actorName": "Google India Talent Team",
+      "actorRole": "company",
+      "action": "STATUS_UPDATED",
+      "entityType": "Application",
+      "entityId": "id_av634x2mv6i5mtz",
+      "details": "Priya Patel updated to Selected by Google India Talent Team.",
+      "createdAt": "2026-10-13T09:54:00.551Z",
+      "updatedAt": "2026-10-13T09:54:00.552Z"
+    },
+    {
+      "_id": "id_rqsfw3cmv6i7ghc",
+      "actorUserId": "id_0bx67gpmv6h8zkb",
+      "actorName": "Google India Talent Team",
+      "actorRole": "company",
+      "action": "RESULT_PUBLISHED",
+      "entityType": "PlacementResult",
+      "entityId": "id_zaa3frfmv6i7gh5",
+      "details": "Placement offer published for Priya Patel at Google (₹16.5 LPA).",
+      "createdAt": "2026-10-13T09:54:00.624Z",
+      "updatedAt": "2026-10-13T09:54:00.624Z"
+    },
+    {
+      "_id": "id_cbzgsg5mv6i7nl1",
+      "actorUserId": "id_fxoeot6mv6h8zkk",
+      "actorName": "Priya Patel",
+      "actorRole": "student",
+      "action": "OFFER_ACCEPTED",
+      "entityType": "PlacementResult",
+      "entityId": "id_zaa3frfmv6i7gh5",
+      "details": "Priya Patel has accepted the offer from Google.",
+      "createdAt": "2026-10-13T09:54:09.829Z",
+      "updatedAt": "2026-10-13T09:54:09.829Z"
+    }
+  ]
+}
