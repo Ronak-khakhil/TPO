@@ -20,7 +20,7 @@ import {
   Sparkles,
   Download
 } from 'lucide-react';
-import { api } from '../services/api.js';
+import { api, getAuthToken } from '../services/api.js';
 
 export const CompanyDashboard = ({
   user,
@@ -571,14 +571,27 @@ export const CompanyDashboard = ({
                         </td>
                         <td>
                           {/* RESUME LINK BUTTON */}
-                          {app.resumeUrl ? (
+                          {app.resumeFile ? (
+                            <a
+                              href={api.getStudentResumeUrl(app.studentProfileId || app.studentId)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-secondary btn-sm"
+                              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: 'var(--accent-primary)', borderColor: '#bfdbfe' }}
+                              title="Open candidate uploaded resume"
+                            >
+                              <FileText size={13} />
+                              <span>Resume</span>
+                              <ExternalLink size={11} />
+                            </a>
+                          ) : app.resumeUrl ? (
                             <a
                               href={app.resumeUrl}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="btn btn-secondary btn-sm"
                               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: 'var(--accent-primary)', borderColor: '#bfdbfe' }}
-                              title="Open candidate resume"
+                              title="Open candidate resume link"
                             >
                               <FileText size={13} />
                               <span>Resume</span>
@@ -857,12 +870,18 @@ export const CompanyDashboard = ({
                     Curriculum Vitae / Resume
                   </div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                    Verified PDF link provided by candidate
+                    {inspectCandidate.resumeFile
+                      ? (inspectCandidate.resumeOriginalName || 'Uploaded PDF Document')
+                      : 'Verified resume link provided by candidate'}
                   </div>
                 </div>
 
                 <a
-                  href={inspectCandidate.resumeUrl || 'https://example.com/sample_resume.pdf'}
+                  href={
+                    inspectCandidate.resumeFile
+                      ? api.getStudentResumeUrl(inspectCandidate.studentProfileId || inspectCandidate.studentId)
+                      : inspectCandidate.resumeUrl || 'https://example.com/sample_resume.pdf'
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-sm"

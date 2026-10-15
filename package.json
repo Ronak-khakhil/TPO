@@ -1,12 +1,15 @@
 {
   "name": "campus-placement-communication-tracking-system",
   "version": "1.0.0",
+  "type": "module",
   "description": "Full Stack Campus Placement Communication & Tracking System for College Minor Project",
   "scripts": {
     "server": "cd server && node server.js",
     "client": "cd client && npm run dev",
     "dev": "node start-dev.js",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "test": "npm --prefix server test",
+    "docs:pdf": "python generate_documentation_pdf.py"
   },
   "keywords": [
     "campus-placement",

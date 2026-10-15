@@ -137,8 +137,11 @@ export const getDriveApplicants = async (req, res) => {
       return {
         ...app,
         studentIdCode: student.studentId || app.studentId,
+        studentProfileId: student._id || app.studentId,
         skills: student.skills || (app.skills || []),
         resumeUrl: student.resumeUrl || app.resumeUrl || '',
+        resumeFile: student.resumeFile || null,
+        resumeOriginalName: student.resumeOriginalName || null,
         phone: student.phone || app.phone || '',
         semester: student.semester || 7,
         graduationYear: student.graduationYear || 2027,

@@ -165,6 +165,19 @@ export default function App() {
     await loadRoleData(user.role);
   };
 
+  const handleUploadResume = async (file) => {
+    const result = await api.uploadResume(file);
+    setProfile(result.student);
+    return result;
+  };
+
+  const handleDeleteResume = async () => {
+    await api.deleteResume();
+    // Refresh profile to clear resume fields
+    const me = await api.getMe();
+    setProfile(me.profile);
+  };
+
   // TPO Actions
   const handleApproveDrive = async (driveId, remarks) => {
     await api.approveDrive(driveId, remarks);
@@ -263,6 +276,8 @@ export default function App() {
             onApply={handleApply}
             onRespondOffer={handleRespondOffer}
             onUpdateProfile={handleUpdateProfile}
+            onUploadResume={handleUploadResume}
+            onDeleteResume={handleDeleteResume}
           />
         ) : user.role === 'tpo' || user.role === 'admin' ? (
           <TpoDashboard

@@ -21,8 +21,11 @@ import {
   ShieldAlert,
   Globe,
   Mail,
-  MapPin
+  MapPin,
+  FileText,
+  ExternalLink
 } from 'lucide-react';
+import { api, getAuthToken } from '../services/api.js';
 
 export const TpoDashboard = ({
   stats,
@@ -779,6 +782,7 @@ export const TpoDashboard = ({
                   <th>Batch</th>
                   <th>CGPA</th>
                   <th>Backlogs</th>
+                  <th>Resume</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -794,6 +798,35 @@ export const TpoDashboard = ({
                     </td>
                     <td style={{ color: s.activeBacklogs > 0 ? 'var(--accent-rose)' : 'var(--accent-emerald)', fontWeight: 800 }}>
                       {s.activeBacklogs}
+                    </td>
+                    <td>
+                      {s.resumeFile ? (
+                        <a
+                          href={api.getStudentResumeUrl(s._id)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-secondary btn-sm"
+                          style={{ padding: '0.25rem 0.6rem', fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
+                          title="View uploaded resume"
+                        >
+                          <FileText size={12} />
+                          <span>Resume</span>
+                        </a>
+                      ) : s.resumeUrl ? (
+                        <a
+                          href={s.resumeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-secondary btn-sm"
+                          style={{ padding: '0.25rem 0.6rem', fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
+                          title="Open resume link"
+                        >
+                          <ExternalLink size={12} />
+                          <span>Link</span>
+                        </a>
+                      ) : (
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>Not uploaded</span>
+                      )}
                     </td>
                     <td>
                       <span className="badge badge-eligible">Verified</span>

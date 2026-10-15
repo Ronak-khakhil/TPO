@@ -1,5 +1,12 @@
 import bcrypt from 'bcryptjs';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { store } from '../data/store.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const UPLOADS_DIR = path.join(__dirname, '..', 'uploads', 'resumes');
 
 export const updateStudentProfile = async (req, res) => {
   try {
@@ -266,5 +273,188 @@ export const createCompanyRecruiter = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ message: 'Failed to create recruiter: ' + err.message });
+  }
+};
+
+// Upload resume file (PDF/DOC/DOCX, max 5MB)
+export const uploadResume = async (req, res) => {
+  try {
+    const user = req.user;
+
+    if (user.role !== 'student' && user.role !== 'admin') {
+      return res.status(403).json({ message: 'Only students can upload resumes.' });
+    }
+
+    if (!req.file) {
+      return res.status(400).json({ message: 'No resume file provided. Please upload a PDF, DOC, or DOCX file (max 5MB).' });
+    }
+
+    let student = store.collection('students').findOne({ userId: user._id });
+
+    // Delete old resume file if it exists to avoid orphan files
+    if (student?.resumeFile) {
+      const oldFilePath = path.join(UPLOADS_DIR, student.resumeFile);
+      if (fs.existsSync(oldFilePath)) {
+        try {
+          fs.unlinkSync(oldFilePath);
+        } catch (e) {
+          console.warn('Could not remove previous resume file:', e.message);
+        }
+      }
+    }
+
+    const resumeData = {
+      resumeFile: req.file.filename,
+      resumeOriginalName: req.file.originalname,
+      resumeSize: req.file.size,
+      resumeMimeType: req.file.mimetype,
+      resumeUploadedAt: new Date().toISOString()
+    };
+
+    if (!student) {
+      student = store.collection('students').insert({
+        userId: user._id,
+        fullName: user.name,
+        email: user.email,
+        studentId: 'STU-' + Date.now().toString().slice(-4),
+        profileVerified: true,
+        ...resumeData
+      });
+    } else {
+      student = store.collection('students').update(student._id, resumeData);
+    }
+
+    // System audit log
+    store.collection('auditLogs').insert({
+      actorUserId: user._id,
+      actorName: user.name,
+      actorRole: user.role,
+      action: 'RESUME_UPLOADED',
+      entityType: 'Student',
+      entityId: student._id,
+      details: `Resume uploaded: ${req.file.originalname} (${(req.file.size / 1024).toFixed(1)} KB)`,
+      timestamp: new Date().toISOString()
+    });
+
+    res.status(200).json({
+      success: true,
+      message: 'Resume uploaded successfully!',
+      resume: {
+        fileName: req.file.filename,
+        originalName: req.file.originalname,
+        size: req.file.size,
+        uploadedAt: resumeData.resumeUploadedAt
+      },
+      student
+    });
+  } catch (err) {
+    res.status(500).json({ message: 'Resume upload failed: ' + err.message });
+  }
+};
+
+// Download / view resume file
+export const downloadResume = async (req, res) => {
+  try {
+    const { studentId } = req.params;
+    let student;
+
+    if (studentId) {
+      student = store.collection('students').findById(studentId);
+      if (!student) {
+        student = store.collection('students').findOne({ userId: studentId });
+      }
+    } else {
+      student = store.collection('students').findOne({ userId: req.user._id });
+    }
+
+    if (!student || !student.resumeFile) {
+      return res.status(404).json({ message: 'No resume file found for this student.' });
+    }
+
+    // Authorization check:
+    // - Students can view their own resume
+    // - TPO and Admin can view any student's resume
+    // - Companies can view resumes of students
+    const isOwner = student.userId === req.user._id;
+    const isTpoOrAdmin = ['tpo', 'admin'].includes(req.user.role);
+    const isCompany = req.user.role === 'company';
+
+    if (!isOwner && !isTpoOrAdmin && !isCompany) {
+      return res.status(403).json({ message: 'Unauthorized access to this resume.' });
+    }
+
+    const filePath = path.join(UPLOADS_DIR, student.resumeFile);
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ message: 'Resume file not found on server disk.' });
+    }
+
+    // Set content type for inline viewing in browser
+    const ext = path.extname(student.resumeFile).toLowerCase();
+    const mimeTypes = {
+      '.pdf': 'application/pdf',
+      '.doc': 'application/msword',
+      '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    };
+
+    res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
+    res.setHeader('Content-Disposition', `inline; filename="${student.resumeOriginalName || student.resumeFile}"`);
+    
+    const fileStream = fs.createReadStream(filePath);
+    fileStream.pipe(res);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to retrieve resume: ' + err.message });
+  }
+};
+
+// Delete resume file
+export const deleteResume = async (req, res) => {
+  try {
+    const user = req.user;
+    if (user.role !== 'student' && user.role !== 'admin') {
+      return res.status(403).json({ message: 'Only students can delete their resume.' });
+    }
+
+    const student = store.collection('students').findOne({ userId: user._id });
+
+    if (!student || !student.resumeFile) {
+      return res.status(404).json({ message: 'No resume file to delete.' });
+    }
+
+    const oldName = student.resumeOriginalName || student.resumeFile;
+
+    // Remove file from disk
+    const filePath = path.join(UPLOADS_DIR, student.resumeFile);
+    if (fs.existsSync(filePath)) {
+      try {
+        fs.unlinkSync(filePath);
+      } catch (e) {
+        console.warn('Could not remove resume file:', e.message);
+      }
+    }
+
+    // Clear resume fields from student record
+    store.collection('students').update(student._id, {
+      resumeFile: null,
+      resumeOriginalName: null,
+      resumeSize: null,
+      resumeMimeType: null,
+      resumeUploadedAt: null
+    });
+
+    // System audit log
+    store.collection('auditLogs').insert({
+      actorUserId: user._id,
+      actorName: user.name,
+      actorRole: user.role,
+      action: 'RESUME_DELETED',
+      entityType: 'Student',
+      entityId: student._id,
+      details: `Resume deleted: ${oldName}`,
+      timestamp: new Date().toISOString()
+    });
+
+    res.json({ success: true, message: 'Resume deleted successfully.' });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to delete resume: ' + err.message });
   }
 };

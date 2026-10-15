@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { api, getAuthToken } from '../services/api.js';
 import {
   Briefcase,
   CheckCircle,
@@ -18,7 +19,12 @@ import {
   FileText,
   Sparkles,
   Phone,
-  Mail
+  Mail,
+  Upload,
+  Trash2,
+  Eye,
+  Download,
+  File
 } from 'lucide-react';
 
 export const StudentDashboard = ({
@@ -29,7 +35,9 @@ export const StudentDashboard = ({
   results,
   onApply,
   onRespondOffer,
-  onUpdateProfile
+  onUpdateProfile,
+  onUploadResume,
+  onDeleteResume
 }) => {
   const [activeTab, setActiveTab] = useState('drives'); // 'drives' | 'applications' | 'offers' | 'profile'
   const [searchQuery, setSearchQuery] = useState('');
@@ -50,6 +58,12 @@ export const StudentDashboard = ({
   });
   const [profileSaving, setProfileSaving] = useState(false);
   const [profileSavedMsg, setProfileSavedMsg] = useState('');
+
+  // Resume upload states
+  const [resumeUploading, setResumeUploading] = useState(false);
+  const [resumeMsg, setResumeMsg] = useState({ type: '', text: '' });
+  const [dragOver, setDragOver] = useState(false);
+  const [resumeDeleting, setResumeDeleting] = useState(false);
 
   // Filter drives
   const filteredDrives = drives.filter(d => {
@@ -93,6 +107,77 @@ export const StudentDashboard = ({
     } finally {
       setProfileSaving(false);
     }
+  };
+
+  // Resume file handlers
+  const handleResumeFileSelect = async (file) => {
+    if (!file) return;
+
+    // Validate file type
+    const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const allowedExts = ['.pdf', '.doc', '.docx'];
+    const ext = '.' + file.name.split('.').pop().toLowerCase();
+
+    if (!allowedTypes.includes(file.type) && !allowedExts.includes(ext)) {
+      setResumeMsg({ type: 'error', text: 'Only PDF, DOC, and DOCX files are allowed.' });
+      return;
+    }
+
+    // Validate file size (5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      setResumeMsg({ type: 'error', text: 'File size must be less than 5MB.' });
+      return;
+    }
+
+    setResumeUploading(true);
+    setResumeMsg({ type: '', text: '' });
+    try {
+      await onUploadResume(file);
+      setResumeMsg({ type: 'success', text: `"${file.name}" uploaded successfully!` });
+      setTimeout(() => setResumeMsg({ type: '', text: '' }), 5000);
+    } catch (err) {
+      setResumeMsg({ type: 'error', text: err.message || 'Upload failed. Please try again.' });
+    } finally {
+      setResumeUploading(false);
+    }
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setDragOver(false);
+    const file = e.dataTransfer.files[0];
+    handleResumeFileSelect(file);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setDragOver(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    setDragOver(false);
+  };
+
+  const handleDeleteResume = async () => {
+    if (!window.confirm('Are you sure you want to delete your resume?')) return;
+    setResumeDeleting(true);
+    try {
+      await onDeleteResume();
+      setResumeMsg({ type: 'success', text: 'Resume deleted successfully.' });
+      setTimeout(() => setResumeMsg({ type: '', text: '' }), 4000);
+    } catch (err) {
+      setResumeMsg({ type: 'error', text: err.message || 'Delete failed.' });
+    } finally {
+      setResumeDeleting(false);
+    }
+  };
+
+  const formatFileSize = (bytes) => {
+    if (!bytes) return '';
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
   };
 
   return (
@@ -178,9 +263,9 @@ export const StudentDashboard = ({
             </div>
           )}
 
-          {profile?.resumeUrl && (
+          {profile?.resumeFile && (
             <a
-              href={profile.resumeUrl}
+              href={api.getResumeViewUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary btn-sm"
@@ -635,21 +720,216 @@ export const StudentDashboard = ({
               </span>
             </div>
 
-            <div className="form-group">
-              <label className="form-label">Resume PDF Link / Portfolio URL</label>
-              <input
-                type="url"
-                value={editProfile.resumeUrl}
-                onChange={(e) => setEditProfile({ ...editProfile, resumeUrl: e.target.value })}
-                className="form-input"
-                placeholder="https://drive.google.com/file/d/your-resume.pdf"
-              />
-            </div>
-
             <button type="submit" disabled={profileSaving} className="btn btn-primary" style={{ marginTop: '0.75rem', width: '100%' }}>
               {profileSaving ? 'Saving Profile...' : 'Save Academic Details & Skills'}
             </button>
           </form>
+
+          {/* ===== Resume Upload Section ===== */}
+          <div style={{
+            marginTop: '2rem',
+            paddingTop: '2rem',
+            borderTop: '2px solid var(--border-subtle)'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem' }}>
+              <div style={{
+                width: '36px', height: '36px', borderRadius: '10px',
+                background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'white', boxShadow: '0 3px 12px rgba(124, 58, 237, 0.3)'
+              }}>
+                <Upload size={18} />
+              </div>
+              <div>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--accent-navy)', margin: 0 }}>
+                  Resume / CV Upload
+                </h4>
+                <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', margin: 0 }}>
+                  Upload your resume as PDF, DOC, or DOCX (max 5MB). Recruiters can view this when reviewing your application.
+                </p>
+              </div>
+            </div>
+
+            {/* Resume status message */}
+            {resumeMsg.text && (
+              <div style={{
+                background: resumeMsg.type === 'success' ? '#ecfdf5' : '#fff1f2',
+                border: `1px solid ${resumeMsg.type === 'success' ? '#a7f3d0' : '#fecdd3'}`,
+                color: resumeMsg.type === 'success' ? '#047857' : '#be123c',
+                padding: '0.65rem 0.85rem',
+                borderRadius: '8px',
+                marginBottom: '1rem',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}>
+                {resumeMsg.type === 'success' ? <CheckCircle size={16} /> : <AlertCircle size={16} />}
+                {resumeMsg.text}
+              </div>
+            )}
+
+            {/* Currently uploaded resume card */}
+            {profile?.resumeFile && (
+              <div style={{
+                background: 'linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%)',
+                border: '1px solid #bfdbfe',
+                borderRadius: '12px',
+                padding: '1.15rem 1.25rem',
+                marginBottom: '1.25rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '1rem',
+                flexWrap: 'wrap'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flex: 1, minWidth: '200px' }}>
+                  <div style={{
+                    width: '44px', height: '44px', borderRadius: '10px',
+                    background: '#dbeafe',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: '#2563eb', flexShrink: 0
+                  }}>
+                    <File size={22} />
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{
+                      fontWeight: 700, fontSize: '0.9rem', color: 'var(--accent-navy)',
+                      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '280px'
+                    }}>
+                      {profile.resumeOriginalName || 'resume.pdf'}
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.75rem', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px' }}>
+                      <span>{formatFileSize(profile.resumeSize)}</span>
+                      {profile.resumeUploadedAt && (
+                        <>
+                          <span>•</span>
+                          <span>Uploaded {new Date(profile.resumeUploadedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
+                  <a
+                    href={api.getResumeViewUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary btn-sm"
+                    style={{ padding: '0.4rem 0.75rem', fontSize: '0.8rem' }}
+                    title="View resume"
+                  >
+                    <Eye size={14} />
+                    <span>View</span>
+                  </a>
+                  <button
+                    onClick={handleDeleteResume}
+                    disabled={resumeDeleting}
+                    className="btn btn-sm"
+                    style={{
+                      padding: '0.4rem 0.75rem', fontSize: '0.8rem',
+                      background: '#fff1f2', border: '1px solid #fecdd3',
+                      color: '#be123c', cursor: 'pointer', borderRadius: '8px',
+                      display: 'flex', alignItems: 'center', gap: '0.35rem',
+                      fontWeight: 600, opacity: resumeDeleting ? 0.6 : 1
+                    }}
+                    title="Delete resume"
+                  >
+                    <Trash2 size={14} />
+                    <span>{resumeDeleting ? 'Deleting...' : 'Delete'}</span>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Drag & Drop Upload Zone */}
+            <div
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onClick={() => document.getElementById('resume-file-input')?.click()}
+              style={{
+                border: `2px dashed ${dragOver ? '#7c3aed' : resumeUploading ? '#a855f7' : '#cbd5e1'}`,
+                borderRadius: '14px',
+                padding: resumeUploading ? '1.5rem' : '2rem 1.5rem',
+                textAlign: 'center',
+                cursor: resumeUploading ? 'wait' : 'pointer',
+                background: dragOver ? 'rgba(124, 58, 237, 0.04)' : resumeUploading ? '#faf5ff' : '#f8fafc',
+                transition: 'all 0.25s ease',
+                position: 'relative'
+              }}
+            >
+              <input
+                id="resume-file-input"
+                type="file"
+                accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                onChange={(e) => {
+                  handleResumeFileSelect(e.target.files[0]);
+                  e.target.value = '';
+                }}
+                style={{ display: 'none' }}
+              />
+
+              {resumeUploading ? (
+                <div>
+                  <div style={{
+                    width: '44px', height: '44px', borderRadius: '50%',
+                    border: '3px solid #e9d5ff', borderTopColor: '#7c3aed',
+                    margin: '0 auto 0.75rem',
+                    animation: 'spin 0.8s linear infinite'
+                  }} />
+                  <p style={{ fontSize: '0.9rem', fontWeight: 700, color: '#7c3aed', margin: 0 }}>
+                    Uploading resume...
+                  </p>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.3rem' }}>
+                    Please wait while your file is being uploaded
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <div style={{
+                    width: '52px', height: '52px', borderRadius: '14px',
+                    background: dragOver ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : 'linear-gradient(135deg, #e2e8f0, #cbd5e1)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    margin: '0 auto 0.85rem',
+                    color: dragOver ? 'white' : '#64748b',
+                    transition: 'all 0.25s ease',
+                    transform: dragOver ? 'scale(1.1)' : 'scale(1)'
+                  }}>
+                    <Upload size={24} />
+                  </div>
+                  <p style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--accent-navy)', margin: '0 0 0.3rem' }}>
+                    {profile?.resumeFile ? 'Replace Resume' : 'Upload Your Resume'}
+                  </p>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0 0 0.65rem' }}>
+                    Drag & drop your file here, or <span style={{ color: '#7c3aed', fontWeight: 700, textDecoration: 'underline' }}>browse</span>
+                  </p>
+                  <div style={{
+                    display: 'inline-flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center'
+                  }}>
+                    {['PDF', 'DOC', 'DOCX'].map(fmt => (
+                      <span key={fmt} style={{
+                        background: '#f1f5f9', border: '1px solid #e2e8f0',
+                        padding: '0.2rem 0.55rem', borderRadius: '5px',
+                        fontSize: '0.7rem', fontWeight: 700, color: '#64748b',
+                        letterSpacing: '0.03em'
+                      }}>
+                        .{fmt}
+                      </span>
+                    ))}
+                    <span style={{
+                      fontSize: '0.7rem', color: 'var(--text-dim)',
+                      padding: '0.2rem 0', fontWeight: 600
+                    }}>
+                      Max 5MB
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       )}
 

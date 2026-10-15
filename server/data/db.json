@@ -99,6 +99,16 @@
       "accountStatus": "active",
       "createdAt": "2026-10-13T10:21:08.512Z",
       "updatedAt": "2026-10-13T10:21:08.516Z"
+    },
+    {
+      "_id": "id_vvsdy0imv92g0a3",
+      "name": "Ronak Khakhil",
+      "email": "khakhilronak@gmail.com",
+      "passwordHash": "$2a$10$bQLGud5o11NjlrVYr0PJ7.nZ2g1uhst4DCXNCpGN16tNIGQ6HlTPm",
+      "role": "student",
+      "accountStatus": "active",
+      "createdAt": "2026-10-15T04:56:04.203Z",
+      "updatedAt": "2026-10-15T04:56:04.203Z"
     }
   ],
   "students": [
@@ -123,7 +133,12 @@
       "resumeUrl": "https://example.com/resumes/2023CS101.pdf",
       "profileVerified": true,
       "createdAt": "2026-10-13T09:27:12.400Z",
-      "updatedAt": "2026-10-13T09:49:22.259Z"
+      "updatedAt": "2026-10-15T05:40:06.290Z",
+      "resumeFile": null,
+      "resumeOriginalName": null,
+      "resumeSize": null,
+      "resumeMimeType": null,
+      "resumeUploadedAt": null
     },
     {
       "_id": "id_5cg0fidmv6h8zkh",
@@ -214,6 +229,34 @@
       "profileVerified": true,
       "createdAt": "2026-10-13T09:27:12.409Z",
       "updatedAt": "2026-10-13T09:27:12.409Z"
+    },
+    {
+      "_id": "id_fzv35ehmv92g0a4",
+      "userId": "id_vvsdy0imv92g0a3",
+      "studentId": "STU-4204",
+      "fullName": "Ronak Khakhil",
+      "email": "khakhilronak@gmail.com",
+      "branch": "CSE",
+      "graduationYear": 2027,
+      "semester": 7,
+      "cgpa": 7.32,
+      "activeBacklogs": 0,
+      "skills": [
+        "java",
+        "python",
+        "c",
+        "c++"
+      ],
+      "phone": "",
+      "resumeUrl": "",
+      "profileVerified": true,
+      "createdAt": "2026-10-15T04:56:04.204Z",
+      "updatedAt": "2026-10-15T15:21:59.203Z",
+      "resumeFile": "id_vvsdy0imv92g0a3_1792077656126_Mayank_Aggarwal_Resume.pdf",
+      "resumeOriginalName": "Mayank_Aggarwal_Resume.pdf",
+      "resumeSize": 162165,
+      "resumeMimeType": "application/pdf",
+      "resumeUploadedAt": "2026-10-15T15:20:56.144Z"
     }
   ],
   "companies": [
@@ -765,6 +808,38 @@
       "additionalNotes": "",
       "createdAt": "2026-10-13T09:52:35.543Z",
       "updatedAt": "2026-10-13T09:54:09.814Z"
+    },
+    {
+      "_id": "id_uwq74d4mv9ov0b6",
+      "driveId": "id_c7rphnmmv6h8zkt",
+      "companyId": "id_d5sponpmv6h8zkr",
+      "companyName": "Microsoft",
+      "jobTitle": "Associate Cloud Solutions Engineer",
+      "studentId": "id_fzv35ehmv92g0a4",
+      "userId": "id_vvsdy0imv92g0a3",
+      "studentName": "Ronak Khakhil",
+      "studentEmail": "khakhilronak@gmail.com",
+      "branch": "CSE",
+      "cgpa": 7.32,
+      "activeBacklogs": 0,
+      "submittedAt": "2026-10-15T15:23:35.634Z",
+      "eligibilityStatus": "ELIGIBLE",
+      "eligibilityReasons": [
+        "All academic requirements and criteria are satisfied."
+      ],
+      "status": "Applied",
+      "currentRound": "Application Review",
+      "roundHistory": [
+        {
+          "roundName": "Application Received",
+          "status": "Applied",
+          "remarks": "Submitted by student via portal",
+          "timestamp": "2026-10-15T15:23:35.634Z"
+        }
+      ],
+      "additionalNotes": "",
+      "createdAt": "2026-10-15T15:23:35.634Z",
+      "updatedAt": "2026-10-15T15:23:35.634Z"
     }
   ],
   "results": [
@@ -976,6 +1051,30 @@
       "read": true,
       "createdAt": "2026-10-13T09:54:00.620Z",
       "updatedAt": "2026-10-13T10:29:32.716Z"
+    },
+    {
+      "_id": "id_x2yk6aimv9ov0bc",
+      "recipientUserId": "id_poq9g8ymv6h8zkc",
+      "recipientRole": "company",
+      "title": "New Applicant: Ronak Khakhil",
+      "message": "Ronak Khakhil (CSE, CGPA: 7.32) applied to Associate Cloud Solutions Engineer.",
+      "type": "drive",
+      "driveId": "id_c7rphnmmv6h8zkt",
+      "read": false,
+      "createdAt": "2026-10-15T15:23:35.640Z",
+      "updatedAt": "2026-10-15T15:23:35.640Z"
+    },
+    {
+      "_id": "id_j6uyle4mv9ov0bm",
+      "recipientUserId": "id_vvsdy0imv92g0a3",
+      "recipientRole": "student",
+      "title": "Application Confirmed: Microsoft",
+      "message": "Your application for Associate Cloud Solutions Engineer was submitted successfully. Status: Applied.",
+      "type": "drive",
+      "driveId": "id_c7rphnmmv6h8zkt",
+      "read": false,
+      "createdAt": "2026-10-15T15:23:35.650Z",
+      "updatedAt": "2026-10-15T15:23:35.650Z"
     }
   ],
   "auditLogs": [
@@ -1151,6 +1250,97 @@
       "details": "Priya Patel has accepted the offer from Google.",
       "createdAt": "2026-10-13T09:54:09.829Z",
       "updatedAt": "2026-10-13T09:54:09.829Z"
+    },
+    {
+      "_id": "id_dzn05jwmv93sxtv",
+      "actorUserId": "id_2adwvuhmv6h8zkf",
+      "actorName": "Rahul Verma",
+      "actorRole": "student",
+      "action": "RESUME_UPLOADED",
+      "entityType": "Student",
+      "entityId": "id_zov2bktmv6h8zkg",
+      "details": "Resume uploaded: Rahul_Verma_Resume_v1.pdf (0.1 KB)",
+      "timestamp": "2026-10-15T05:34:07.171Z",
+      "createdAt": "2026-10-15T05:34:07.171Z",
+      "updatedAt": "2026-10-15T05:34:07.171Z"
+    },
+    {
+      "_id": "id_spl1t4cmv93sxud",
+      "actorUserId": "id_2adwvuhmv6h8zkf",
+      "actorName": "Rahul Verma",
+      "actorRole": "student",
+      "action": "RESUME_UPLOADED",
+      "entityType": "Student",
+      "entityId": "id_zov2bktmv6h8zkg",
+      "details": "Resume uploaded: Rahul_Verma_Resume_Final.docx (0.0 KB)",
+      "timestamp": "2026-10-15T05:34:07.189Z",
+      "createdAt": "2026-10-15T05:34:07.189Z",
+      "updatedAt": "2026-10-15T05:34:07.189Z"
+    },
+    {
+      "_id": "id_o169ajnmv93sxwx",
+      "actorUserId": "id_2adwvuhmv6h8zkf",
+      "actorName": "Rahul Verma",
+      "actorRole": "student",
+      "action": "RESUME_DELETED",
+      "entityType": "Student",
+      "entityId": "id_zov2bktmv6h8zkg",
+      "details": "Resume deleted: Rahul_Verma_Resume_Final.docx",
+      "timestamp": "2026-10-15T05:34:07.281Z",
+      "createdAt": "2026-10-15T05:34:07.281Z",
+      "updatedAt": "2026-10-15T05:34:07.281Z"
+    },
+    {
+      "_id": "id_azjj0iomv940ms9",
+      "actorUserId": "id_2adwvuhmv6h8zkf",
+      "actorName": "Rahul Verma",
+      "actorRole": "student",
+      "action": "RESUME_UPLOADED",
+      "entityType": "Student",
+      "entityId": "id_zov2bktmv6h8zkg",
+      "details": "Resume uploaded: Rahul_Verma_Resume_v1.pdf (0.1 KB)",
+      "timestamp": "2026-10-15T05:40:06.105Z",
+      "createdAt": "2026-10-15T05:40:06.105Z",
+      "updatedAt": "2026-10-15T05:40:06.105Z"
+    },
+    {
+      "_id": "id_r060v8bmv940msw",
+      "actorUserId": "id_2adwvuhmv6h8zkf",
+      "actorName": "Rahul Verma",
+      "actorRole": "student",
+      "action": "RESUME_UPLOADED",
+      "entityType": "Student",
+      "entityId": "id_zov2bktmv6h8zkg",
+      "details": "Resume uploaded: Rahul_Verma_Resume_Final.docx (0.0 KB)",
+      "timestamp": "2026-10-15T05:40:06.128Z",
+      "createdAt": "2026-10-15T05:40:06.128Z",
+      "updatedAt": "2026-10-15T05:40:06.128Z"
+    },
+    {
+      "_id": "id_5jjfd2zmv940mxj",
+      "actorUserId": "id_2adwvuhmv6h8zkf",
+      "actorName": "Rahul Verma",
+      "actorRole": "student",
+      "action": "RESUME_DELETED",
+      "entityType": "Student",
+      "entityId": "id_zov2bktmv6h8zkg",
+      "details": "Resume deleted: Rahul_Verma_Resume_Final.docx",
+      "timestamp": "2026-10-15T05:40:06.295Z",
+      "createdAt": "2026-10-15T05:40:06.295Z",
+      "updatedAt": "2026-10-15T05:40:06.295Z"
+    },
+    {
+      "_id": "id_mtwx89xmv9orl91",
+      "actorUserId": "id_vvsdy0imv92g0a3",
+      "actorName": "Ronak Khakhil",
+      "actorRole": "student",
+      "action": "RESUME_UPLOADED",
+      "entityType": "Student",
+      "entityId": "id_fzv35ehmv92g0a4",
+      "details": "Resume uploaded: Mayank_Aggarwal_Resume.pdf (158.4 KB)",
+      "timestamp": "2026-10-15T15:20:56.148Z",
+      "createdAt": "2026-10-15T15:20:56.149Z",
+      "updatedAt": "2026-10-15T15:20:56.149Z"
     }
   ]
 }

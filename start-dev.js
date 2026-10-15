@@ -9,8 +9,8 @@ console.log('===============================================================');
 console.log('🚀 Starting Campus Placement Communication & Tracking System...');
 console.log('===============================================================');
 
-// 1. Launch Backend Server
-const serverProcess = spawn('node', ['server.js'], {
+// 1. Launch Backend Server with watch mode
+const serverProcess = spawn('node', ['--watch', 'server.js'], {
   cwd: path.join(__dirname, 'server'),
   stdio: 'inherit',
   shell: true

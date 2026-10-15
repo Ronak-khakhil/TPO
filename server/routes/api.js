@@ -36,8 +36,12 @@ import {
   getAllCompanies,
   verifyRecruiter,
   rejectRecruiter,
-  createCompanyRecruiter
+  createCompanyRecruiter,
+  uploadResume,
+  downloadResume,
+  deleteResume
 } from '../controllers/usersController.js';
+import { resumeUpload } from '../middleware/upload.js';
 import { requireAuth, requireRole } from '../middleware/auth.js';
 
 const router = express.Router();
@@ -85,6 +89,12 @@ router.get('/audit-logs', requireAuth, requireRole(['tpo', 'admin']), getAuditLo
 
 // --- Profiles & Management ---
 router.patch('/students/profile', requireAuth, updateStudentProfile);
+
+// --- Resume Upload/Download/Delete ---
+router.post('/students/resume', requireAuth, resumeUpload.single('resume'), uploadResume);
+router.get('/students/resume', requireAuth, downloadResume);
+router.get('/students/:studentId/resume', requireAuth, downloadResume);
+router.delete('/students/resume', requireAuth, deleteResume);
 router.get('/students', requireAuth, requireRole(['tpo', 'admin']), getAllStudents);
 router.patch('/companies/profile', requireAuth, updateCompanyProfile);
 router.get('/companies', requireAuth, requireRole(['tpo', 'admin']), getAllCompanies);

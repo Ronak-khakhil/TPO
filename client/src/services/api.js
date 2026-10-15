@@ -76,6 +76,33 @@ export const api = {
   getAllStudents: () => request('/students'),
   getAllCompanies: () => request('/companies'),
 
+  // Resume Operations
+  uploadResume: (file) => {
+    const formData = new FormData();
+    formData.append('resume', file);
+    const token = getAuthToken();
+    return fetch(`${BASE_URL}/students/resume`, {
+      method: 'POST',
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
+      },
+      body: formData
+    }).then(async (res) => {
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.message || 'Resume upload failed');
+      return data;
+    });
+  },
+  deleteResume: () => request('/students/resume', { method: 'DELETE' }),
+  getResumeViewUrl: () => {
+    const token = getAuthToken();
+    return `${BASE_URL}/students/resume${token ? `?token=${encodeURIComponent(token)}` : ''}`;
+  },
+  getStudentResumeUrl: (studentId) => {
+    const token = getAuthToken();
+    return `${BASE_URL}/students/${studentId}/resume${token ? `?token=${encodeURIComponent(token)}` : ''}`;
+  },
+
   // Recruiter Verification (TPO)
   verifyRecruiter: (companyId, remarks) => request(`/companies/${companyId}/verify`, { method: 'POST', body: JSON.stringify({ remarks }) }),
   rejectRecruiter: (companyId, reason) => request(`/companies/${companyId}/reject`, { method: 'POST', body: JSON.stringify({ reason }) }),

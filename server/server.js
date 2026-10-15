@@ -30,8 +30,18 @@ app.use('/api', apiRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
+  if (err.name === 'MulterError') {
+    if (err.code === 'LIMIT_FILE_SIZE') {
+      return res.status(400).json({ message: 'File too large. Maximum allowed resume size is 5MB.' });
+    }
+    return res.status(400).json({ message: `Upload error: ${err.message}` });
+  }
+  if (err.message && err.message.includes('Only PDF, DOC, and DOCX')) {
+    return res.status(400).json({ message: err.message });
+  }
+
   console.error('Unhandled Server Error:', err);
-  res.status(500).json({
+  res.status(err.status || 500).json({
     message: err.message || 'Internal server error occurred.',
     stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
   });
@@ -48,10 +58,14 @@ try {
   console.error('Initial seeding notice:', e.message);
 }
 
-app.listen(PORT, () => {
-  console.log(`=======================================================`);
-  console.log(`🎓 Placement System Backend Server running on port ${PORT}`);
-  console.log(`🌐 Base URL: http://localhost:${PORT}`);
-  console.log(`📡 API Health: http://localhost:${PORT}/health`);
-  console.log(`=======================================================`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`=======================================================`);
+    console.log(`🎓 Placement System Backend Server running on port ${PORT}`);
+    console.log(`🌐 Base URL: http://localhost:${PORT}`);
+    console.log(`📡 API Health: http://localhost:${PORT}/health`);
+    console.log(`=======================================================`);
+  });
+}
+
+export default app;
